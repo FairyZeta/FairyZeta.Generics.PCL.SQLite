@@ -55,7 +55,7 @@ namespace FairyZeta
         /// <returns> 簡易ログ文字列 </returns>
         public string GetLogFormat(string pLogFormat = "{0} - {1} - {2}")
         {
-            return string.Format(pLogFormat, this.LogTime.ToString("yyyy/MM/dd hh:mm:ss.fff"), this.SQLiteOperationResult.ToString(), this.LogMsg);
+            return string.Format(pLogFormat, this.LogTime.ToString("yyyy/MM/dd HH:mm:ss.fff"), this.SQLiteOperationResult.ToString(), this.LogMsg);
         }
 
         /*--- Method: protected ---------------------------------------------------------------------------------------------------------------------------------------*/

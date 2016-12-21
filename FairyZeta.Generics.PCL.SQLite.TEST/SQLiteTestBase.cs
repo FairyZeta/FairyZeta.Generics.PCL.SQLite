@@ -29,15 +29,15 @@ namespace FairyZeta.Generics.PCL.SQLite.TEST
             return typeof(PersonEntity);
         }
 
-        protected virtual GenericSQLiteManager CreateManager(IEnumerable<Type> pEntityTypes)
+        protected virtual GenericSQLiteManager CreateManager()
         {
-            return new GenericSQLiteManager(pEntityTypes, true);
+            return new GenericSQLiteManager(true);
         }
 
 
         protected virtual void OutputLogs(GenericSQLiteManager pGenericSQLiteManager)
         {
-            foreach (var item in pGenericSQLiteManager.LogList)
+            foreach (var item in pGenericSQLiteManager.GetLogs())
             {
                 Debug.WriteLine(item.GetLogFormat());
             }

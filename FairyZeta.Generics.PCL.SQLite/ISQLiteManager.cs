@@ -13,33 +13,31 @@ namespace FairyZeta
 
         /// <summary> DBファイル生成とコネクション生成を実行します。
         /// </summary>
-        /// <param name="pDbFolderPath"> DBフォルダへのパス </param>
+        /// <param name="pDbFolderPath"> カレントフォルダからDBフォルダへのパス </param>
         /// <param name="pDbFileName"> DBファイルの名称 </param>
-        /// <param name="pAutoTableCreate"> ファイルとコネクション生成後、自動テーブル生成の設定
-        /// <para> =><code>True</code>の場合はテーブルを自動生成し、<code>False</code>の場合は自動生成しない </para>
-        /// </param>
-        /// <returns> 処理結果コード </returns>
-        Task<List<SQLiteOperationLog>> CreateDbFileAndConnectionAsync(string pDbFolderPath, string pDbFileName, bool pAutoTableCreate = true);
-
-        /// <summary> DBファイル内のテーブル生成を実行します。
-        /// </summary>
-        /// <returns> 処理結果コード </returns>
-        Task<int[]> CreateTableAsync();
+        /// <returns> 操作結果 </returns>
+        Task<List<SQLiteOperationLog>> CreateDbFileAndConnectionAsync(string pDbFolderPath, string pDbFileName);
 
         /// <summary> DBファイル内に新しいテーブルを追加します。
         /// </summary>
-        /// <param name="pAddTableTypes"> 追加するテーブルの型式 </param>
-        /// <returns> 処理結果コード </returns>
-        Task<int> AddTableAsync(Type pAddTableType);
+        /// <param name="pAddTableType"> 追加するテーブルの型 </param>
+        /// <param name="pConnectionCheck"> テーブル操作前にコネクションを確認する場合<code>True</code> </param>
+        /// <returns> 操作結果 </returns>
+        Task<List<SQLiteOperationLog>> AddTableAsync(Type pAddTableType, bool pConnectionCheck);
 
         /// <summary> DBファイル内のテーブルを削除します。
         /// </summary>
-        /// <typeparam name="T"> 削除するテーブルの型式 </typeparam>
-        /// <returns> 処理結果コード </returns>
-        Task<int> DeleteTableAsync<T>() where T : new();
+        /// <typeparam name="T"> 削除するテーブルの型 </typeparam>
+        /// <returns> 操作結果 </returns>
+        Task<List<SQLiteOperationLog>> DeleteTableAsync<T>() where T : new();
+
+        /// <summary> このマネージャーが管理しているDBファイルとコネクションを削除します。
+        /// </summary>
+        /// <returns> 操作結果 </returns>
+        Task<List<SQLiteOperationLog>> DeleteDbFileAndConnectionAsync();
 
         /*--- Method: public ------------------------------------------------------------------------------------------------------------------------------------------*/
-        
+
 
     }
 }

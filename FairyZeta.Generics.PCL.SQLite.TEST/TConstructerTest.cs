@@ -65,42 +65,12 @@ namespace FairyZeta.Generics.PCL.SQLite.TEST
         #endregion
 
         /// <summary> コンストラクタテスト
-        /// <para> => 1つのエンティティを使用 </para>
+        /// <para> => 正常系 </para>
         /// </summary>
         [TestMethod]
         public void TConstructer_S0001()
         {
-            var result = base.CreateManager(new List<Type>() { base.GetTestEntityType() });
-            base.OutputLogs(result);
-        }
-
-        /// <summary> コンストラクタテスト
-        /// <para> => 複数のエンティティを使用 </para>
-        /// </summary>
-        [TestMethod]
-        public void TConstructer_S0002()
-        {
-            var result = base.CreateManager(base.GetTestEntityTypes());
-            base.OutputLogs(result);
-        }
-
-        /// <summary> コンストラクタテスト
-        /// <para> => 初期パラメータnull </para>
-        /// </summary>
-        [TestMethod]
-        public void TConstructer_F0001()
-        {
-            var result = base.CreateManager(null);
-            base.OutputLogs(result);
-        }
-
-        /// <summary> コンストラクタテスト
-        /// <para> => エンティティ0件 </para>
-        /// </summary>
-        [TestMethod]
-        public void TConstructer_F0002()
-        {
-            var result = base.CreateManager(new List<Type>());
+            var result = base.CreateManager();
             base.OutputLogs(result);
         }
 
