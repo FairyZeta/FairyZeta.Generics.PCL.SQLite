@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FairyZeta.Generics.PCL.SQLite
+namespace FairyZeta.Generics.PCL.SQLite.TEST.Entity
 {
-    public class Class1
+    public abstract class EntityBase
     {
+        public int ID { get; set; }
+
     }
 }

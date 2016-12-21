@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.25914.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairyZeta.Generics.PCL.SQLite", "FairyZeta.Generics.PCL.SQLite.csproj", "{124150B3-C03F-475B-93B3-5C7FDC293E97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairyZeta.Generics.PCL.SQLite", "FairyZeta.Generics.PCL.SQLite\FairyZeta.Generics.PCL.SQLite.csproj", "{8F696555-30E7-4AC2-9153-F6A930171562}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairyZeta.Generics.PCL.SQLite.TEST", "FairyZeta.Generics.PCL.SQLite.TEST\FairyZeta.Generics.PCL.SQLite.TEST.csproj", "{DB6F0C29-E744-460F-B1F6-8F2DA6617F18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{124150B3-C03F-475B-93B3-5C7FDC293E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{124150B3-C03F-475B-93B3-5C7FDC293E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{124150B3-C03F-475B-93B3-5C7FDC293E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{124150B3-C03F-475B-93B3-5C7FDC293E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F696555-30E7-4AC2-9153-F6A930171562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F696555-30E7-4AC2-9153-F6A930171562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F696555-30E7-4AC2-9153-F6A930171562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F696555-30E7-4AC2-9153-F6A930171562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB6F0C29-E744-460F-B1F6-8F2DA6617F18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6F0C29-E744-460F-B1F6-8F2DA6617F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6F0C29-E744-460F-B1F6-8F2DA6617F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6F0C29-E744-460F-B1F6-8F2DA6617F18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
