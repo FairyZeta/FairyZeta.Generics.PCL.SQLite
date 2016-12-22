@@ -102,10 +102,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\EntityBase.cs" />
-    <Compile Include="Entity\PersonEntity.cs" />
-    <Compile Include="Entity\TodoEntity.cs" />
-    <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="SQLiteTestBase.cs" />
     <Compile Include="TDbProcessTest.cs" />
     <Compile Include="TEntityProcessTest.cs" />
@@ -116,6 +112,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FairyZeta.Generics.PCL.SQLite.Entity\FairyZeta.Generics.PCL.SQLite.Entity.csproj">
+      <Project>{3a11fda7-d4d2-4e0b-93e0-4b2a50ba3543}</Project>
+      <Name>FairyZeta.Generics.PCL.SQLite.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FairyZeta.Generics.PCL.SQLite\FairyZeta.Generics.PCL.SQLite.csproj">
       <Project>{8f696555-30e7-4ac2-9153-f6a930171562}</Project>
       <Name>FairyZeta.Generics.PCL.SQLite</Name>

@@ -17,20 +17,27 @@ namespace FairyZeta
         /// <typeparam name="T"> エンティティの型 </typeparam>
         /// <returns> エンティティリスト </returns>
         Task<List<T>> GetEntitysAsync<T>() where T : new();
-        
-        /// <summary> エンティティの追加を実行します。
+
+        /// <summary> エンティティの追加または更新を実行します。
         /// </summary>
         /// <typeparam name="T"> エンティティの型 </typeparam>
-        /// <param name="pEntity"> 追加するエンティティ </param>
-        /// <returns> 処理結果コード </returns>
-        Task<int> InsertEntityAsync<T>(T pEntity) where T : new();
+        /// <param name="pEntity"> 更新するエンティティ列挙 </param>
+        /// <returns> 処理結果コードリスト </returns>
+        Task<List<int>> InsertOrUpdateEntityAsync<T>(IEnumerable<T> pEntitys) where T : new();
 
-        /// <summary> エンティティの更新を実行します。
+        /// <summary> エンティティの追加または更新を実行します。
         /// </summary>
         /// <typeparam name="T"> エンティティの型 </typeparam>
         /// <param name="pEntity"> 更新するエンティティ </param>
         /// <returns> 処理結果コード </returns>
-        Task<int> UpdateEntityAsync<T>(T pEntity) where T : new();
+        Task<int> InsertOrUpdateEntityAsync<T>(T pEntity) where T : new();
+
+        /// <summary> エンティティの削除を実行します。
+        /// </summary>
+        /// <typeparam name="T"> エンティティの型 </typeparam>
+        /// <param name="pEntity"> 削除するエンティティ列挙 </param>
+        /// <returns> 処理結果コードリスト </returns>
+        Task<List<int>> DeleteEntityAsync<T>(IEnumerable<T> pEntitys) where T : new();
 
         /// <summary> エンティティの削除を実行します。
         /// </summary>
@@ -38,5 +45,6 @@ namespace FairyZeta
         /// <param name="pEntity"> 削除するエンティティ </param>
         /// <returns> 処理結果コード </returns>
         Task<int> DeleteEntityAsync<T>(T pEntity) where T : new();
+
     }
 }

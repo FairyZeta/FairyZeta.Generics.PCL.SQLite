@@ -11,6 +11,8 @@ namespace FairyZeta
     {
         /*--- Property/Field Definitions ------------------------------------------------------------------------------------------------------------------------------*/
 
+        /*--- Method: public ------------------------------------------------------------------------------------------------------------------------------------------*/
+
         /// <summary> DBファイル生成とコネクション生成を実行します。
         /// </summary>
         /// <param name="pDbFolderPath"> カレントフォルダからDBフォルダへのパス </param>
@@ -18,25 +20,31 @@ namespace FairyZeta
         /// <returns> 操作結果 </returns>
         Task<List<SQLiteOperationLog>> CreateDbFileAndConnectionAsync(string pDbFolderPath, string pDbFileName);
 
-        /// <summary> DBファイル内に新しいテーブルを追加します。
-        /// </summary>
-        /// <param name="pAddTableType"> 追加するテーブルの型 </param>
-        /// <param name="pConnectionCheck"> テーブル操作前にコネクションを確認する場合<code>True</code> </param>
-        /// <returns> 操作結果 </returns>
-        Task<List<SQLiteOperationLog>> AddTableAsync(Type pAddTableType, bool pConnectionCheck);
-
-        /// <summary> DBファイル内のテーブルを削除します。
-        /// </summary>
-        /// <typeparam name="T"> 削除するテーブルの型 </typeparam>
-        /// <returns> 操作結果 </returns>
-        Task<List<SQLiteOperationLog>> DeleteTableAsync<T>() where T : new();
-
         /// <summary> このマネージャーが管理しているDBファイルとコネクションを削除します。
         /// </summary>
         /// <returns> 操作結果 </returns>
         Task<List<SQLiteOperationLog>> DeleteDbFileAndConnectionAsync();
 
-        /*--- Method: public ------------------------------------------------------------------------------------------------------------------------------------------*/
+        /// <summary> DBファイル内に新しいテーブルを追加します。
+        /// </summary>
+        /// <param name="pAddTableTypes"> 追加するテーブルの型列挙 </param>
+        /// <param name="pConnectionCheck"> テーブル操作前にコネクションを確認する場合<code>True</code> </param>
+        /// <returns> 操作結果 </returns>
+        Task<List<SQLiteOperationLog>> AddTableAsync(IEnumerable<Type> pAddTableTypes, bool pConnectionCheck = true);
+
+        /// <summary> DBファイル内に新しいテーブルを追加します。
+        /// </summary>
+        /// <param name="pAddTableType"> 追加するテーブルの型 </param>
+        /// <param name="pConnectionCheck"> テーブル操作前にコネクションを確認する場合<code>True</code> </param>
+        /// <returns> 操作結果 </returns>
+        Task<List<SQLiteOperationLog>> AddTableAsync(Type pAddTableType, bool pConnectionCheck = true);
+
+        /// <summary> DBファイル内のテーブルを削除します。
+        /// </summary>
+        /// <typeparam name="T"> 削除するテーブルの型 </typeparam>
+        /// <param name="pConnectionCheck"> テーブル操作前にコネクションを確認する場合<code>True</code> </param>
+        /// <returns> 操作結果 </returns>
+        Task<List<SQLiteOperationLog>> DeleteTableAsync<T>(bool pConnectionCheck = true) where T : new();
 
 
     }

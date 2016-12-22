@@ -9,7 +9,7 @@ namespace FairyZeta.Generics.PCL.SQLite.TEST.Entity
     public class TodoEntity : EntityBase
     {
         public string Detail { get; set; }
-
+        
         public DateTime CreateDate { get; set; }
 
         public DateTime UpDate { get; set; }
